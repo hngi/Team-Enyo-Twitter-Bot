@@ -4,6 +4,7 @@
   "description": "A Twitterbot that store tweets in an external drive",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +21,8 @@
   "contributors": [
     "Claret Nnamocha <devclareo@gmail.com>",
     "Ibrahim Abdeneby <iabdeneby@gmail.com>",
-    "ThankGod George <gthankgod@gmail.com>"
+    "ThankGod George <gthankgod@gmail.com>",
+    "Eniola Medunoye <medunoyeeni@gmail.com>"
   ],
   "license": "ISC",
   "bugs": {
@@ -29,6 +31,8 @@
   "homepage": "https://github.com/hngi/Team-Enyo-Twitter-Bot#readme",
   "dependencies": {
     "@google-cloud/datastore": "^4.3.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
     "twitter": "^1.7.1"
   }
 }
