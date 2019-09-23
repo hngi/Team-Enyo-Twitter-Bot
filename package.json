@@ -17,10 +17,18 @@
     "chatbot",
     "hngi6"
   ],
-  "author": "",
+  "contributors": [
+    "Claret Nnamocha <devclareo@gmail.com>",
+    "Ibrahim Abdeneby <iabdeneby@gmail.com>",
+    "ThankGod George <gthankgod@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hngi/Team-Enyo-Twitter-Bot/issues"
   },
-  "homepage": "https://github.com/hngi/Team-Enyo-Twitter-Bot#readme"
+  "homepage": "https://github.com/hngi/Team-Enyo-Twitter-Bot#readme",
+  "dependencies": {
+    "@google-cloud/datastore": "^4.3.0",
+    "twitter": "^1.7.1"
+  }
 }
