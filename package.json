@@ -1,0 +1,26 @@
+{
+  "name": "team-enyo-twitter-bot",
+  "version": "1.0.0",
+  "description": "A Twitterbot that store tweets in an external drive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hngi/Team-Enyo-Twitter-Bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "twitterbot",
+    "hng",
+    "chatbot",
+    "hngi6"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hngi/Team-Enyo-Twitter-Bot/issues"
+  },
+  "homepage": "https://github.com/hngi/Team-Enyo-Twitter-Bot#readme"
+}
