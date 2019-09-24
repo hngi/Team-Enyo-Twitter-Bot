@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+body
+{
+	background: #CDDBFF;
+}
+header{
+	background: #FFFFFF;
+	height: 50px;
+}
+header img
+{
+margin-left: 20px;
+}
+
+.register-right{
+	background: #FFFFFF;
+	width: 350px;
+	height: 520px;
+	border: none;
+	border-radius: 2.5em;
+	padding: 50px;
+	margin-top: 50px;
+	margin-right: 20px;
+}
+.register-right p{
+text-align: center;
+padding: 10px;
+font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+color: rgba(21, 54, 153, 0.5);
+
+}
+
+.btn-default
+{
+background: #109CF1;
+width: 250px;
+height: 45px;
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 22px;
+text-transform: uppercase;
+color: #FFFFFF;
+margin-top: 40px;
+display: block;
+margin-left: 50px;
+}
+.form-control
+{
+padding: 20px;
+margin-top: 30px;
+width: 350px;
+height: 39px;
+background: rgba(254, 254, 251, 0.05);
+border: 1px solid rgba(3, 8, 64, 0.3);
+box-sizing: border-box;
+border-radius: 5px;
+}
+.register-left
+{
+	margin-top: 70px;
+}
+p a
+{
+	text-decoration:  none;
+	color:#109CF1;
+	font-weight: bold;
+	font-size: 14px;
+}
+p img
+{
+padding: 10px;
+
+}
+.form-group .placeholder{
+font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+color: rgba(21, 54, 153, 0.5);
+}
