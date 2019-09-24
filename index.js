@@ -1,20 +1,27 @@
-const http = require("http")
-const express = require('express')
-const fs = require("fs")
+'use strict'
 
-const app = express()
-const port = process.env.PORT || 8081
+var express = require('express')
+const handlebars = require('express-handlebars')
 
-require('dotenv').config()
+var app = express()
+var port = process.env.PORT || 8081
 
+app.engine('html', handlebars({
+    defaultLayout: 'main',
+    extname: '.html'
+}))
+app.set('view engine', 'html')
 
-app.get('/', function(request, response) {
-    fs.readFile(`${process.env.VIEWS_DIR}/index.html`, 'utf8', function(err, data) {
-        response.writeHead(200, { 'Content-Type': 'text/html' })
-        response.end(data)
-    })
+app.get('/', function(req, res) {
+    res.render('index')
 })
 
+app.get('/signup', function(req, res) {
+    res.render('signup', { layout: false })
+})
+
+app.use(express.static('public/'));
+
 app.listen(port, function() {
-    console.log(`Server running at http://127.0.0.1:${this.address().port}/`)
+    console.log(`Server listening on http://localhost:${port}`)
 })
