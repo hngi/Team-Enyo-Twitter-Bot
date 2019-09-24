@@ -20,6 +20,10 @@ app.get('/signup', function(req, res) {
     res.render('signup', { layout: false })
 })
 
+app.get('/authenticate', function(req, res) {
+    res.render('authenticate', { layout: false })
+})
+
 app.use(express.static('public/'));
 
 app.listen(port, function() {
