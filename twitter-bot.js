@@ -25,6 +25,44 @@ TBot.get('search/tweets', {
     }
 
     data.statuses.forEach((status, index) => {
-        // Store data
+        let id = status.id
+
+        // get details of the post
+        TBot.post(`statuses/show`, { id }, (err, details_response) => {
+            if (err) {
+                console.log(err);
+                return
+            }
+
+            // save the post
+            save_data(details_response.id,details_response)
+
+            // like the post
+            TBot.post('favorites/create', { id }, (err, fave_response) => {
+                if (err) {
+                    console.log(err);
+                    return
+                }
+                let username = fave_response.user.screen_name;
+                let tweetId = fave_response.id_str;
+                // console.log(`Liked the post https://twitter.com/${username}/status/${tweetId}`)
+            })
+        })
+
+
+
+
     })
 })
+
+async function save_data(key, value) {
+
+    var gds_key = GDS.key(key);
+    var gds_data = value
+
+    const entity = {
+        key: gds_key,
+        data: gds_data
+    }
+    await datastore.save(entity);
+}
