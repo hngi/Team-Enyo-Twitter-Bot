@@ -1,4 +1,1 @@
-/node_modules
-npm-debug.log
-.DS_Store
-/personal_tests
+node_modules
