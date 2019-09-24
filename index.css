@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.topnav{
+    overflow: hidden;
+}
+
+.topnav a {
+    padding: 20px;
+    float: left;
+    text-align: center;
+    text-decoration: none
+}
+.move-right{
+    float: right;
+}
+
+.topnav .divider1 .icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    
+}
+
+.topnav #hide {
+    display: none
+}
+
+.main-class{
+    width: 100%
+}
+
+.divider {
+    box-sizing: border-box;
+}
+
+.divider1{
+    float: left;
+    width: 30%;
+    background: #109cf1;
+    height: 100%;
+}
+
+.divider1 #exit{
+    float: right;
+    padding-top: 10px;
+    padding-right: 8px;
+    color: #ffffff
+
+}
+
+.divider1 .name-intro {
+    margin-top: 80px;
+    padding-left: 50px;
+    padding-right: 35px
+}
+
+.name-intro h3 {
+    color: white
+}
+
+.name-intro p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: Lato;
+    color: #ccc
+}
+
+.divider1 .profile-pic{
+    margin-top: 30px;
+    padding-left: 50px;
+}
+
+.user-name-right{
+    float: right;
+    margin-right: 160px;
+    margin-top: 45px;
+    color: #ffffff
+}
+
+.user-name-right p{
+    color: #ccc
+}
+
+.images {
+    height: 90px;
+    width: 90px;
+    border-radius: 100%
+}
+
+.divider1 .search-div {
+    margin-top: 100px;
+    padding-left: 50px;
+}
+
+.search-div input{
+    width: 90%;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: none
+}
+
+/* .search-div .fa-search {
+    float: right;
+    margin-right: 220px;
+    margin-top: 20px
+} */
+
+.divider1 .manage-system{
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+.manage-system p {
+    margin-bottom: 20px;
+    color: #ffffff
+}
+
+.divider2{
+    float: left;
+    width: 70%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
