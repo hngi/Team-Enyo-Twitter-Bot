@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/authenticate.css">
-    <title>Authentication page</title>
-</head>
-
-<body>
-    <!--login form details-->
-    <form action="">
-        <!--logo for the page-->
-        <div class="img">
-            <a href="/"><img src="https://res.cloudinary.com/yagmus/image/upload/v1569316757/Group_4_wzszaa.png" alt="logo"></a>
-        </div>
-        <div class="form-container">
-            <center>
-                <h1 class="setuptwitter"> Set Up Twitter</h1>
-            </center>
-            <div>
-                <!--email with set input format -->
-                <center><input type="twitter handle" class="twitterhandle" id="twitter handle" name="twt" placeholder="twitter handle" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></center><br><br>
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                <link type="text/css" rel="stylesheet" href="..\public\css\authenticate.css">
+        
+                 <title>Authentication page</title>
+            </head>
+            <body>
+               <header> 
+                   <!--logo for the page-->
+                   <div class="logo">
+                <a href="/index.html"><img src="https://res.cloudinary.com/yagmus/image/upload/v1569316757/Group_4_wzszaa.png" alt="logo"></a>
             </div>
-            <center><input type="display name" class="twitterhandle twitterhandle23" id="email" name="display name" placeholder="display name" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></center><br><br>
-            <center><input type="email" class="twitterhandle" id="email" name="email" placeholder="Email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></center><br><br>
-            <center><input type="password" class="twitterhandle" id="password" name="psw" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required></center>
-            <br><br>
-            <Center><button type="button" class="authenticate" type="submit"><img src="https://res.cloudinary.com/gbogz/image/upload/v1569335672/m3ylslj1xxrleg3xmcof.png" id="buttonimg">AUTHENTICATE</button></Center>
-        </div>
-    </form>
-</body>
+       </header>
+                <!--login form details-->
+                
+                                       
+                    <div class="form-container">
+                    <form method="POST" action="">
+                    
+                            <h1> Set Up Twitter</h1>
+        
+                        
+                          <!--email with set input format -->
+                            <input type="text" id="twitter-handle" name="twt" placeholder="Twitter handle" required><br><br> <br> 
+                        
+                        
+                         <input type="text"  id="display" name="display name" placeholder="Display name" required ><br><br><br>
+            
+                        <input type="email"  id="email" name="email" placeholder="Email" required 
+                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/><br><br><br>
+            
+        
+                        <input type="password" id="password" name="psw" placeholder="Password" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required >
+                        <br><br><br>
+        
+        
+                        <button type="button" class="authenticate" type="submit"><img src="https://res.cloudinary.com/mide358/image/upload/v1569357104/ICON_TWITTER_uj2o2j.png">AUTHENTICATE</button></Center>
+                    </form>        
+                    </div>
+                    </body>
+        </html>
+                    
+ 
+    
 
-</html>
+
+
+
