@@ -3,23 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Team Enyo Twitter Bot :: Signup Page</title>
+    <title>Signup Page</title>
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./signup.css" rel="stylesheet">
+    <link type="text/css" href="signup.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- twittwer-bot-logo -->
-        <div class="row">
-            <div class="col">
-                <div class="logoDiv">
-                    <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318093/team-enyo-twitter-bot-project/Group_4_c0mkdp.png" 
-                        alt="logo" 
-                    />
-                </div>
+    <header>
+<!-- twitter-bot-logo -->
+<div class="row">
+        <div class="col">
+            <div class="logoDiv">
+                <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318093/team-enyo-twitter-bot-project/Group_4_c0mkdp.png" 
+                    alt="logo" 
+                />
             </div>
         </div>
+    </div>
+    </header>
+
+    <div class="container-fluid">
+        
 
         <!-- row for contents in the page -->
         <div class="row" id="main-content-div">
@@ -34,34 +38,41 @@
 
             <!-- signup form -->
             <div class="col-md-6">
-                <form method="post" action="form.php" name="myForm" class="signup-form" id="myForm">
-                    <div class="container">
+                    <div class="signup-form">
+                <form method="post" action="form.php" name="myForm"  id="myForm">
+                    
                         <div class="signupText">
                             <h4>Sign Up</h4>
                         </div>
-                        <hr>
-                        <input type="text" placeholder="Enter First Name" aria-describedby="name-format" id="fname" name="fname">
+                        
+                        <input type="text" placeholder="First Name" aria-describedby="name-format" id="fname" name="fname" pattern="[A-Za-z]+" required/>
                         <p id="fname_error" class="wrong-input"></p>
         
-                        <input type="text" placeholder="Enter Last Name" id="lname" name="lname" >
+                        <input type="text" placeholder="Last Name" id="lname" name="lname" pattern="[A-Za-z]+" required/>
                         <p id="lname_error" class="wrong-input"></p>
         
-                        <input type="email" placeholder="Enter Email" id="email" name="email">
+                        <input type="email" placeholder="Email" id="email" name="email" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                         <p id="email_error" class="wrong-input"></p>
                     
-                        <input type="password" placeholder="Enter Password" id="password" name="password" >
+                        <input type="password" placeholder="Enter Password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" 
+                        required>
                         <p id="password_error" class="wrong-input"></p>
                     
-                        <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" >
+                        <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" 
+                        required>
                         <p id="cpassword_error" class="wrong-input"></p>
-                        <p>By creating an account you agree to our 
-                            <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
-                        </p>
-                    
+                        
                         <div class="clearfix">
                             <button type="submit" value="submit" class="btn btn-primary">Sign Up</button>
-                            <h5>Sign In with <a href="#">twitter</a></h5>
                         </div>
+
+                        <div class="twitter-link">
+                            <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
+                               <span>Sign In with </span> <a href="http://twitter.com" target="_blank">twitter</a></div>
+                       
                     </div>
                 </form>
             </div>
