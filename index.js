@@ -20,6 +20,10 @@ app.get('/signup', function(req, res) {
     res.render('signup', { layout: false })
 })
 
+app.get('/profile', function(req, res) {
+    res.render('profile', { layout: false })
+})
+
 app.get('/authenticate', function(req, res) {
     res.render('authenticate', { layout: false })
 })
