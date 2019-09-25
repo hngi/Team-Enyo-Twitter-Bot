@@ -13,7 +13,7 @@ app.engine('html', handlebars({
 app.set('view engine', 'html')
 
 app.get('/', function(req, res) {
-    res.render('index')
+    res.render('index', { layout: false })
 })
 
 app.get('/signup', function(req, res) {
