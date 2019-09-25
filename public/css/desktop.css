@@ -1,0 +1,54 @@
+.tweet{
+position: absolute;
+
+
+left: 240px;
+top: 249px;
+
+font-family: Arial, Helvetica, sans-serif;
+font-style:Helvetica;
+font-weight: bold;
+font-size: 50px;
+
+
+color: #109CF1;
+}
+
+.img{
+position: absolute;
+width: 867.25px;
+height: 651px;
+left: 587px;
+top: 167px;
+
+
+}
+.bot{
+position: absolute;
+width: 545px;
+height: 121px;
+left: 240px;
+top: 399px;
+
+font-family: sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+
+
+color: #109CF1;
+}
+
+.started{
+position: absolute;
+width: 240px;
+height: 50px;
+left: 240px;;
+top: 510px;
+
+
+}
+.container{
+    width: 500px;
+    margin: auto;
+}

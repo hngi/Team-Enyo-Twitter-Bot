@@ -1,0 +1,118 @@
+#main-content-div {
+    background: #CDDBFF;
+    height: 94vh;
+}
+
+#main-content-div div {
+    margin: auto auto; 
+}
+
+.imgDiv img {
+    margin-left: 33%; 
+    margin-right: 7%;
+
+}
+
+.logoDiv {
+    margin: 7px 0;
+    padding-left: 2%;
+}
+
+* {box-sizing: border-box}
+
+.signup-form {
+    height: 100%;
+    width: 70%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5%;
+    margin-right: 10%;
+    text-align: center;
+    background: #FFFFFF;
+    color: rgba(3, 8, 64, 0.56);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 65px;
+}
+
+/* Full-width input fields */
+  input[type=text], input[type=password], input[type=email] {
+  width: 80%;
+  margin: 2% 10%;
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #E0E0E0; 
+}
+
+input[placeholder] {
+    font-size: 13px;
+    color: #E0E0E0;
+}
+
+input {
+    background: white;
+    max-height: 70px;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+.btn {
+  background-color: #109CF1;
+  color: white;
+  margin: 0 30%;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.wrong-input {
+    color: red;
+    animation: shake 0.5s;
+    animation-iteration-count: 2;
+} 
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  border-radius: 30px;
+  background-color: #f44336;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+.container p { font-size: 13px; }
+.signupText h4 {
+    color: grey;
+    font-size: 20px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.clearfix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clearfix h5 {
+    font-size: 13px;
+    line-height: 22px;
+}
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .signupbtn { width: 100%;}
+}
