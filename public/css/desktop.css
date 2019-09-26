@@ -1,54 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+header {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+    left:0px;
+    top: 0px;
+    padding-left: 5%;
+}
+.container {
+    
+    margin-top:20%;
+    
+   
+    
+
+}
+.logo{
+    float:left;
+
+}
+.link {
+    
+    float: right;
+    padding-right: 35px;
+    padding-top: 5px;
+    color: #60A7F4;
+}
+
+.link a {
+    color: #60A7F4;
+}
 .tweet{
 position: absolute;
-
-
-left: 240px;
+left: 98px;
 top: 249px;
-
-font-family: Arial, Helvetica, sans-serif;
-font-style:Helvetica;
+font-family: Lato;
+font-style: normal;
 font-weight: bold;
-font-size: 50px;
-
-
+font-size: 65px;
+line-height: 96px;
 color: #109CF1;
 }
 
-.img{
+.bot-img{
 position: absolute;
 width: 867.25px;
 height: 651px;
 left: 587px;
 top: 167px;
-
-
 }
+
+
+
 .bot{
-position: absolute;
-width: 545px;
-height: 121px;
-left: 240px;
-top: 399px;
+    position: absolute;
+    width: 545px;
+    height: 121px;
+    left: 98px;
+    top: 485px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;  
+    color: #109CF1;
+   }
 
-font-family: sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-
-
-color: #109CF1;
+button{
+    position: absolute;
+    top:650px;
+    background-color: #109CF1;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    width: 240px;
+    height: 50px;
+    left: 100px;
 }
 
-.started{
-position: absolute;
-width: 240px;
-height: 50px;
-left: 240px;;
-top: 510px;
+@media (max-width: 300px) { 
+  body  {
+    
 
+    }
 
 }
-.container{
-    width: 500px;
-    margin: auto;
-}
+
+
+
+
