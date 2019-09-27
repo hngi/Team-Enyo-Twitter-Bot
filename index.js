@@ -24,6 +24,9 @@ app.get('/', function(req, res, next) {
     if (req.query.oauth_token) {
         const request = require('request');
         const options = {
+            headers: {
+                'oauth_token': req.query.oauth_token
+            },
             oauth: {
                 consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
                 consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
@@ -33,13 +36,14 @@ app.get('/', function(req, res, next) {
             method: 'post',
             url: 'https://api.twitter.com/1.1/oauth/access_token',
             form: {
-                'oauth_token': req.query.oauth_token,
+                // 'oauth_token': req.query.oauth_token,
                 'oauth_verifier': req.query.oauth_verifier,
             }
         };
 
         request(options, function(error, response, data) {
             console.log(data)
+            // res.end(JSON.stringify(error))
             res.end(JSON.stringify(data))
             // res.render('authenticate', { layout: false, link: data.split('&')[0] })
         })
