@@ -87,14 +87,106 @@ button{
     left: 100px;
 }
 
-@media (max-width: 300px) { 
-  body  {
-    
 
+/* To hide mobile image*/
+.text-mobile{
+    display: none;
+}
+
+/* responsiveness on tab and mobile*/
+@media (min-width: 320px) and (max-width:480px) {
+    .bot-img  {
+        display: none;
+}
+
+    header {
+        
+       box-shadow: none;
     }
+.link {
+    display: none;
+}
+
+.bot {
+    display: none;
+}
+
+.tweet {
+    display: none;
+}
+.mobile-img{
+    max-width:75vw;
+    display:block;
+    position: absolute;
+    top: 110px;
+    left: 25%;
+}
+
+.logo {
+    position: absolute;
+    top: 340px;
+    left: 100px;
+}
+.text-mobile{
+    position: absolute;
+    display: inline-block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #109CF1;
+    left: 95px;
+    top: 410px;
+}
+
+button{
+    position: absolute;
+    width: 162px;
+    height: 34px;
+    left: 95px;
+    top: 480px;
 
 }
 
+}
+
+@media (min-width:1000px){
+.mobile-img{
+    display: none;
+}
 
 
+}
+@media (min-width: 481px) and (max-width:767px)
+{
+    .mobile-img{
+        position: absolute;
+        top: 70px;
+        left: 41px;
+        
+            }
 
+.text-mobile{
+    position: absolute;
+    margin-top: 450px;
+}
+
+    .bot-img {
+        display:none;
+    }
+
+    .tweet {
+        margin-top: 10%;
+    }
+}
+    @media (min-width: 768px) and (max-width: 1440px)
+    {
+      .mobile-img{
+        display: none;
+    }
+    
+
+
+    }
