@@ -27,6 +27,9 @@ app.get('/', function(req, res, next) {
 app.get('/signup', function(req, res) {
     res.render('signup', { layout: false })
 })
+app.get('/signin', function(req, res) {
+    res.render('signin', { layout: false })
+})
 
 app.post('/signin', function(req, res) {
     var check = auth.check_params(req.fields, ['email', 'password'])
