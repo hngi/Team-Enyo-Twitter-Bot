@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 body {
     Background: #CDDBFF;
     font-family: Lato;
@@ -98,6 +99,7 @@ input[placeholder] {
     text-align: center;
 }
 
+
 button:hover {
     opacity:1;
 }
@@ -145,3 +147,86 @@ button:hover {
 @media screen and (max-width: 300px) {
     .signupbtn { width: 100%;}
 }
+
+/* Media responsiveness for mobile */
+
+@media (min-width: 320px) and (max-width:480px) {
+    .imgDiv  {
+        display: none;
+}
+
+.signup-form {
+    margin-top: 25%;
+    max-width: 75vw;
+    max-height: 70vh;
+}
+ input {
+   
+    max-width: 70%;
+    display: inline-block;
+}
+
+.signupText{
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-align: center;
+
+}
+    input[placeholder] {
+        line-height: 10px;
+        padding: 5px;
+
+    }
+    .btn {
+        
+        width: 40%;
+        opacity: 0.9;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding:5px;
+        font-family: Lato;
+        font-size: 15px;
+        line-height:15px;
+        margin-left: 33%;
+        
+    }
+    .twitter-link{
+       margin-top:5px;
+    }
+}
+/* Media responsiveness for mobile and tablet*/
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+    .signup-form {
+        max-width: 50vw;
+    }
+
+    .imgDiv  {
+        display: none;
+}
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+
+    .signup-form {
+        width:60%;   
+        margin-right:20%;
+        margin-top: 30%;
+    }  
+   
+
+   
+
+   
+.imgDiv {
+    display: none;
+}
+
+}
+
+
+   

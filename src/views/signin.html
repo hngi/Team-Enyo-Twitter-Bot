@@ -3,36 +3,56 @@
 <head>
  <title>sign in page</title>
  <meta name="viewport" content="width=device-width" initial-scale="1">
- <!-- <link rel="stylesheet" type="text/css" href="./w3.css"> -->
  <link rel="stylesheet" type="text/css" href="/css/login.css">
  </head>
- <body style="background-color:  #cddbffff;">
-    <div style="height: 70px; background-color:white;">
-            <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Group_4_c0mkdp.png"
-            alt="logo" style="margin-left: 8%; margin-bottom: 2%; margin-top: 2%; max-width: 100px ;"/>
+ <body>
+<Header>
+    <div class="logo">
+        <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318093/team-enyo-twitter-bot-project/Group_4_c0mkdp.png" 
+        alt="logo" 
+    />
     </div>
-    <div style="display: flex; flex-direction:row">
-    <div class="div1">
+</Header>
+
+    
+
+    <div class="background-image">
 <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Frame_rar5yv.png"
- alt="image" width="100%"/>
-    </div>  
- <div class="div2">
-        <p class="heading">Sign In</p>
-           <form name="myForm" id="myForm" action="signup.html" class="hng" method="post">
-               <input type="text" id="username" name="username" placeholder="username">
-               <p id="ist"></p>
-               <input type="password" id="password" name="password" placeholder="password">
-               <p id="secs"></p>
-               <p class="check"> <input type="checkbox" name="check"
-                   value="checkbox" checked="checked"> Remember me</p>
-               <input type="submit"  value="LOG IN"> 
+ alt="image" />
+    </div>
+
+  <form method="post" action="form.php" name="myForm"  id="myForm">
+                            
+        <div class="signup-form">
+                                
+                <div class="signupText">
+                        <h4>Sign In</h4>
+                    </div>
            
-           </form>
-           <p class="pet">
-               <a href="signup.html">No account yet?</a>
-           </p>
-       </div>
-       </div>
-       <script src="/js/signin.js"></script>
+                    <input type="email" placeholder="Email" id="email" name="email" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+               <input type="password" id="password" name="password" placeholder="password"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" 
+                required>
+
+               <div>
+                   <button type="submit" value="submit" class="button">Log In</button>
+               </div>
+           
+          <div class="sign-up">
+                <span>No account yet? &nbsp; &nbsp;<a href="../views/signup.html">Sign Up</a></span>
+          </div>
+           
+          <div class="twitter-link">
+                <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
+                   <span>Sign in with </span> <a href="http://twitter.com" target="_blank">twitter</a></div>
+           
+        </div>
+        </form>
+       
+       
+       <script src="signin.js"></script>
 </body>
 </html>
