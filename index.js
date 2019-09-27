@@ -19,16 +19,16 @@ app.engine('html', handlebars({
 app.set('view engine', 'html')
 
 app.use(formidableMiddleware());
-
 app.get('/', function(req, res, next) {
     if (req.query.oauth_token) {
         const request = require('request');
         const options = {
             headers: {
-                'Token': req.query.oauth_token,
-                'oauth_verifier': req.query.oauth_verifier
+                // 'content-type' : 'application/x-www-form-urlencoded',
+                'request token' : req.query.oauth_token
             },
             oauth: {
+                consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
                 consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
                 consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
                 token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
@@ -37,15 +37,14 @@ app.get('/', function(req, res, next) {
             method: 'post',
             url: 'https://api.twitter.com/oauth/access_token',
             form: {
-                // 'oauth_token': req.query.oauth_token,
                 'oauth_verifier': req.query.oauth_verifier,
             }
         };
 
         request(options, function(error, response, data) {
-            console.log(data)
+            // console.log(error,response,data)
             // res.end(JSON.stringify(error))
-            res.end(JSON.stringify(data))
+            res.end(JSON.stringify(error) + ' ddd ' + JSON.stringify(response) + ' ddd ' + JSON.stringify(data))
             // res.render('authenticate', { layout: false, link: data.split('&')[0] })
         })
     } else {
