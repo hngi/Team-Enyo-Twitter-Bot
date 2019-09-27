@@ -29,8 +29,8 @@ app.get('/', function(req, res, next) {
                 token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
                 token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
             },
-            method: 'get',
-            url: 'https://api.twitter.com/account/verify_credentials'
+            method: 'post',
+            url: `https://api.twitter.com/1.1/oauth/access_token?oauth_token=${req.query.oauth_token}&oauth_verifier=${req.query.oauth_verifier}`
         }
         request(options, function(error, response, data) {
         	res.end(JSON.stringify(data));
