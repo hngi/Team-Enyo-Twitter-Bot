@@ -52,7 +52,20 @@ app.post('/signup', function(req, res) {
 })
 
 app.post('/verified', function(req, res) {
-    res.end(JSON.stringify(req.fields))
+	const request = require('request');
+    const options = {
+      oauth: {
+        consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
+        consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+        token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
+        token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
+      },
+      method: 'post',
+      url: 'https://api.twitter.com/account/verify_credentials'
+    }    
+   	request(options, function(error, response, data) {
+    res.render('authenticate', { data })
+    })
 })
 
 app.get('/profile', function(req, res) {
