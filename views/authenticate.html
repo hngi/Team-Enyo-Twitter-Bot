@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link type="text/css" rel="stylesheet" href="../public/css/authenticate.css">
+        <link type="text/css" rel="stylesheet" href="/css/authenticate.css">
          <title>Authentication page</title>
     </head>
     <body>
@@ -30,8 +30,9 @@
                 <input type="password" id="password" name="psw" placeholder="Password" 
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                         title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required >
-
+                <a  style="text-decoration: none;" href="https://api.twitter.com/oauth/authorize?{{ link }}">
                 <button type="button" class="authenticate" type="submit"><img src="https://res.cloudinary.com/walebant/image/upload/v1569497292/samples/enyo-bot/twitter-icon.svg">AUTHENTICATE</button>
+                </a>
             </form>        
         </div>
     </body>
