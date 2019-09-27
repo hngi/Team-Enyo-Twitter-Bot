@@ -21,29 +21,11 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
-  const request = require('request');
-        const options = {
-            oauth: {
-                consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-                consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-                token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-                token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-            },
-            method: 'post',
-            url: `https://api.twitter.com/1.1/oauth/access_token?oauth_token=${req.query.oauth_token}&oauth_verifier=${req.query.oauth_verifier}`
-        }
-        request(options, function(error, response, data) {
-        	res.end(JSON.stringify(data));
-            // res.render('authenticate', { data })
-    	res.render('index', { layout: false, link: 'My favorite veggies' })
-        })
+    res.render('index', { layout: false })
 })
 
 app.get('/signup', function(req, res) {
     res.render('signup', { layout: false })
-})
-app.get('/signin', function(req, res) {
-    res.render('signin', { layout: false })
 })
 
 app.post('/signin', function(req, res) {
@@ -66,45 +48,33 @@ app.post('/signup', function(req, res) {
     })
 })
 
-app.get('/verified', function(req, res) {
-    const request = require('request');
-    const options = {
-        oauth: {
-            consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-            consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-            token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-            token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-        },
-        method: 'get',
-        url: 'https://api.twitter.com/account/verify_credentials'
-    }
-    request(options, function(error, response, data) {
-        res.render('authenticate', { data })
-    })
-})
-
 app.get('/profile', function(req, res) {
     res.render('profile', { layout: false })
 })
 
-app.get('/authenticate', function(req, res) {
-    const request = require('request');
-    const options = {
-        oauth: {
-            consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-            consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-            token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-            token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-        },
-        method: 'post',
-        url: 'https://api.twitter.com/oauth/request_token',
-        form: {
-            'oauth_callback': 'https://enyo-twitter-bot.herokuapp.com/',
-        }
-    };
+app.get('/verify-twitter/', function(req, res) {
+	res.end(req.query)
+})
 
-    request(options, function(error, response, data) {
-        res.render('authenticate', { layout: false, link: data.split('&')[0] })
+app.get('/authenticate', function(req, res) {
+	const request = require('request');
+    const options = {
+      oauth: {
+        consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
+        consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+        token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
+        token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
+      },
+      method: 'post',
+      url: 'https://api.twitter.com/oauth/request_token',
+      form: {
+        'oauth_callback': 'https://enyo-twitter-bot.herokuapp.com/',
+      }
+    };
+    
+   	request(options, function(error, response, data) {
+   		console.log(data)
+    res.render('authenticate', { layout: false, link: data.split('&')[0] })
     })
 
 })
