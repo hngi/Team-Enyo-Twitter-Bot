@@ -33,7 +33,8 @@ app.get('/', function(req, res, next) {
             method: 'post',
             url: 'https://api.twitter.com/oauth/access_token',
             form: {
-                'oauth_verifier': req.query.oauth_verifier,
+                'oauth_verifier': req.query.oauth_verifier,,
+                'oauth_token': req.query.oauth_token,,
             }
         };
 
