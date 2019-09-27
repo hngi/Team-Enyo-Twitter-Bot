@@ -25,7 +25,8 @@ app.get('/', function(req, res, next) {
         const request = require('request');
         const options = {
             headers: {
-                'oauth_token': req.query.oauth_token
+                'oauth_token': req.query.oauth_token,
+                'oauth_verifier': req.query.oauth_verifier
             },
             oauth: {
                 consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
