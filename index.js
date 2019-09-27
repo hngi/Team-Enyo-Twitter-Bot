@@ -21,7 +21,23 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
-    res.render('index', { layout: false, link: 'My favorite veggies'})
+    if (req.fields.oauth_token) {
+        const request = require('request');
+        const options = {
+            oauth: {
+                consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
+                consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+                token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
+                token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
+            },
+            method: 'get',
+            url: 'https://api.twitter.com/account/verify_credentials'
+        }
+        request(options, function(error, response, data) {
+            res.render('authenticate', { data })
+        })
+    }
+    res.render('index', { layout: false, link: 'My favorite veggies' })
 })
 
 app.get('/signup', function(req, res) {
@@ -52,19 +68,19 @@ app.post('/signup', function(req, res) {
 })
 
 app.get('/verified', function(req, res) {
-	const request = require('request');
+    const request = require('request');
     const options = {
-      oauth: {
-        consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-        consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-        token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-        token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-      },
-      method: 'post',
-      url: 'https://api.twitter.com/account/verify_credentials'
-    }    
-   	request(options, function(error, response, data) {
-    res.render('authenticate', { data })
+        oauth: {
+            consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
+            consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+            token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
+            token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
+        },
+        method: 'get',
+        url: 'https://api.twitter.com/account/verify_credentials'
+    }
+    request(options, function(error, response, data) {
+        res.render('authenticate', { data })
     })
 })
 
@@ -73,23 +89,23 @@ app.get('/profile', function(req, res) {
 })
 
 app.get('/authenticate', function(req, res) {
-	const request = require('request');
+    const request = require('request');
     const options = {
-      oauth: {
-        consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-        consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-        token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-        token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-      },
-      method: 'post',
-      url: 'https://api.twitter.com/oauth/request_token',
-      form: {
-        'oauth_callback': 'https://enyo-twitter-bot.herokuapp.com/',
-      }
+        oauth: {
+            consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
+            consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+            token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
+            token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
+        },
+        method: 'post',
+        url: 'https://api.twitter.com/oauth/request_token',
+        form: {
+            'oauth_callback': 'https://enyo-twitter-bot.herokuapp.com/',
+        }
     };
-    
-   	request(options, function(error, response, data) {
-    res.render('authenticate', { layout: false, link: data.split('&')[0] })
+
+    request(options, function(error, response, data) {
+        res.render('authenticate', { layout: false, link: data.split('&')[0] })
     })
 
 })
