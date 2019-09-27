@@ -51,7 +51,7 @@ app.post('/signup', function(req, res) {
     })
 })
 
-app.post('/verified', function(req, res) {
+app.get('/verified', function(req, res) {
 	const request = require('request');
     const options = {
       oauth: {
