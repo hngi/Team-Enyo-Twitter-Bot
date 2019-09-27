@@ -21,6 +21,9 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
+	if (req.query.oauth_token) {
+		res.die(JSON.stringify(req.query) + ' ==--== '+ JSON.stringify(req.fields))
+	}
     res.render('index', { layout: false })
 })
 
