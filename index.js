@@ -21,7 +21,7 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
-    if (req.quetory.oauth_token) {
+    if (req.query.oauth_token) {
         const request = require('request');
         const options = {
             oauth: {
@@ -72,10 +72,6 @@ app.post('/signup', function(req, res) {
 
 app.get('/profile', function(req, res) {
     res.render('profile', { layout: false })
-})
-
-app.get('/verify-twitter/', function(req, res) {
-    res.end(req.query)
 })
 
 app.get('/authenticate', function(req, res) {
