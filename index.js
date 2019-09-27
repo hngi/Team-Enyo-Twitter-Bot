@@ -21,8 +21,7 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
-    if (req.fields.oauth_token) {
-        const request = require('request');
+  const request = require('request');
         const options = {
             oauth: {
                 consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
@@ -34,10 +33,10 @@ app.get('/', function(req, res, next) {
             url: 'https://api.twitter.com/account/verify_credentials'
         }
         request(options, function(error, response, data) {
-            res.render('authenticate', { data })
+        	res.end(JSON.stringify(data));
+            // res.render('authenticate', { data })
+    	res.render('index', { layout: false, link: 'My favorite veggies' })
         })
-    }
-    res.render('index', { layout: false, link: 'My favorite veggies' })
 })
 
 app.get('/signup', function(req, res) {
