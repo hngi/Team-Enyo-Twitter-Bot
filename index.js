@@ -31,10 +31,10 @@ app.get('/', function(req, res, next) {
                 token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
             },
             method: 'post',
-            url: 'https://api.twitter.com/oauth/access_token',
+            url: 'https://api.twitter.com/1.1/oauth/access_token',
             form: {
-                'oauth_verifier': req.query.oauth_verifier,,
-                'oauth_token': req.query.oauth_token,,
+                'oauth_token': req.query.oauth_token,
+                'oauth_verifier': req.query.oauth_verifier,
             }
         };
 
@@ -43,8 +43,9 @@ app.get('/', function(req, res, next) {
             res.end(JSON.stringify(data))
             // res.render('authenticate', { layout: false, link: data.split('&')[0] })
         })
+    } else {
+        res.render('index', { layout: false })
     }
-    res.render('index', { layout: false })
 })
 
 app.get('/signup', function(req, res) {
