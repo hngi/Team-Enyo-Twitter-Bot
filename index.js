@@ -21,7 +21,7 @@ app.set('view engine', 'html')
 app.use(formidableMiddleware());
 
 app.get('/', function(req, res, next) {
-	console.log(req.quetory.oauth_ken)
+	res.write(req.quetory.oauth_ken || 'nope')
     if (req.quetory.oauth_ken) {
         const request = require('request');
         const options = {
