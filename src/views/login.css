@@ -1,50 +1,211 @@
-.div1{
-     margin-left: 10%; padding-top: 11.5%; padding-left: 4%; width: 30%;
-}
-.div2{
-    border-radius: 40px; background-color:white; padding-top: 60px; padding-bottom:60px; padding-left: 40px; padding-right:
-     40px; width: 35%; margin-left: 13%;
-     margin-top: 7%; border: 1px solid  #ffdeee
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+body {
+    Background: #CDDBFF;
+    font-family: Lato;
 }
 
-input[type=text] {
-        width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #a6a6a6;
-         border: 1px solid #cccccc; border-radius: 4px; box-sizing: border-box; margin-bottom: 25px;
+header{
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+    left:0px;
+    top: 0;
+    
 }
-input[type=text]:focus {
-    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #999999;
-     border: 1px solid #999999; border-radius: 4px; box-sizing: border-box; margin-bottom: 25px;
-}
- input[type=password] {
-    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #a6a6a6;
-    border: 1px solid #cccccc; border-radius: 4px; box-sizing: border-box; margin-bottom: 3px;
-}
-input[type=password]:focus {
-    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #999999;
-    border: 1px solid #999999; border-radius: 4px; box-sizing: border-box; margin-bottom: 3px;
-}
-input[type="submit"] {
-    width: 50%; padding: 14px 20px; display: cursor: pointer;
-    border: 0px;  background-color: #6691ff; margin-left: 25%;
-    color: white;
-}
-
-input[type="submit"]:hover {
-    background-color: #6691ff;
-}
-.heading{
-    font-size: 20px; color:#cccccc; margin-left: 39.5%; margin-bottom: 28px;
+.background-image {
+    margin-top: 13%;
+    width: 20%;
+    display: block;
+    float: left;
+    margin-left: 5%;
+    max-width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
- .check {
-    margin-left:12%;  margin-bottom: 22px; color: #99b6ff; font-size: 12px;
+.logo {
+   padding-left: 5%;
+   padding-top: 2px;
+}
+
+* {box-sizing: border-box}
+
+.signup-form {
+    display: block;
+    float: right;
+    height: 480px;
+    width: 459px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 55px;
+    margin-top: 11%;
+    margin-right: 10%;
+      
+  
+}
+
+.signupText {
+    margin-top: 35px;
+    color: grey;
+    font-size: 22px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+
+
+/* Full-width input fields */
+  input {
+    width: 80%;
+    display: inline-block;
+    background: rgba(254, 254, 251, 0.05);
+    color: rgba(3, 8, 64, 0.56);
+    border: 1px solid rgba(3, 8, 64, 0.3);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-bottom: 35px;
+}
+
+input[placeholder] {
+    font-family: Lato;
+    font-size: 12px;
+    color: rgba(21, 54, 153, 0.5);
+    line-height: 14px;
+    padding: 10px;
+}
+
+.check {
+    
+    margin-left: -40%;
+    margin-bottom: 22px; 
+    color: #99b6ff; 
+    font-size: 12px;
 }  
-.pet{margin-left: 35%;margin-top: 10px; margin-bottom: 10px; color: #6691ff; font-size: 14px;
+
+/* Set a style for all buttons */
+.button {
+    background-color: #109CF1;
+    color: white;
+    margin: 0 25%;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding:5px;
+    font-family: Lato;
+    font-size: 18px;
+    line-height:22px;
+    border: none;
 }
-a{ text-decoration: none; color: #6691ff; }    
-#ist{
-    color: tomato; margin-left: 33%; margin-top: 0px; font-size: 12px;
+
+.sign-up {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
 }
-#secs{
-    color: tomato; margin-left: 33%; margin-top: 0px; font-size: 12px;
+
+
+.twitter-link{
+    font-family: Lato;
+    font-size: 16px;
+    line-height:22px;
+    color: rgba(3, 8, 64, 0.56);
+    text-align: center;
+    margin-top: 25px;
 }
+button:hover {
+    opacity:1;
+}
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .button { width: 100%;}
+}
+
+/* Media responsiveness for mobile and tablet*/
+
+@media (min-width: 320px) and (max-width:480px) {
+    .background-image  {
+        display: none;
+}
+
+.signup-form {
+    margin-top: 25%;
+    max-width: 75vw;
+    max-height: 70vh;
+}
+ input {
+   
+    max-width: 70%;
+    display: inline-block;
+}
+
+.signupText{
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-align: center;
+
+}
+    input[placeholder] {
+        line-height: 10px;
+        padding: 5px;
+
+    }
+    .btn {
+        
+        width: 40%;
+        opacity: 0.9;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding:5px;
+        font-family: Lato;
+        font-size: 15px;
+        line-height:15px;
+        margin-left: 33%;
+        
+    }
+    .twitter-link{
+       margin-top:5px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+    .signup-form {
+        max-width: 50vw;
+    }
+
+    .background-image  {
+        display: none;
+}
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+
+    .signup-form {
+        width:60%;   
+        margin-right:20%;
+        margin-top: 30%;
+    }  
+   
+.background-image {
+    
+   display: none;
+
+}
+
+
+}
+   
+
+
