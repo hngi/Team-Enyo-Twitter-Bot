@@ -35,7 +35,7 @@ app.get('/', function(req, res, next) {
                 token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
             },
             method: 'post',
-            url: 'https://api.twitter.com/1.1/oauth/access_token',
+            url: 'https://api.twitter.com/oauth/access_token',
             form: {
                 // 'oauth_token': req.query.oauth_token,
                 'oauth_verifier': req.query.oauth_verifier,
