@@ -118,7 +118,7 @@ app.get('/authenticate', auth1, function(req, res) {
     res.render('authenticate', { layout: false })
 })
 
-app.post('/fetch-tweets', function (req,res) {
+app.post('/fetch-tweets', auth1, function (req,res) {
     var check = auth.check_params(req.fields, ['user_id'])
     if (!check.status) { res.end(JSON.stringify(check)) }
     var data = check.data
