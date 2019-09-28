@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    padding: 0;
+    /* padding: 0;overflow: hidden; */
+
 }
 
 .topnav{
@@ -53,37 +54,47 @@
 
 .divider1 .name-intro {
     margin-top: 80px;
-    padding-left: 50px;
-    padding-right: 35px
+    padding-left: 2vw;
+    padding-right: 30px;
+    /* word-wrap: break-word; */
 }
 
 .name-intro h3 {
-    color: white
+    color: white;
+    font-size: 1em;
 }
 
 .name-intro p {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-    font-family: Lato;
-    color: #ccc
+    font-size: 2.5vw;
+    /* line-height: 14px; */
+    font-family: 'Lato';
+    color: #ccc;
+    /* text-justify: left; */
+    text-align: unset;
 }
 
 .divider1 .profile-pic{
     margin-top: 30px;
-    padding-left: 50px;
+    padding-left: 2vw;
+}
+
+.divider1 .profile-pic img {
+    max-width: 12vw;
+    max-height: 12vh;
 }
 
 .user-name-right{
-    float: right;
-    margin-right: 160px;
-    margin-top: 45px;
+    /* float: right; */
+    margin-left: 10vw;
+    margin-top: -12vh;
+    /* margin-right: 0px; */
+    /* margin-top: 0px; */
     color: #ffffff
 }
 
 .user-name-right p{
-    color: #ccc
+    color: #ccc;
+    /* margin-left: -80vw; */
 }
 
 .images {
@@ -93,12 +104,12 @@
 }
 
 .divider1 .search-div {
-    margin-top: 100px;
-    padding-left: 50px;
+    margin-top: 5vh;
+    padding-left: 1vw;
 }
 
 .search-div input{
-    width: 90%;
+    width: 80%;
     border-right: none;
     border-top: none;
     border-left: none;
@@ -106,7 +117,7 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: none
+    background: none;
 }
 
 /* .search-div .fa-search {
@@ -116,13 +127,14 @@
 } */
 
 .divider1 .manage-system{
-    padding-left: 50px;
+    padding-left: 3vw;
     margin-top: 30px;
 }
 
 .manage-system p {
     margin-bottom: 20px;
-    color: #ffffff
+    color: #ffffff;
+    font-size: 15px;
 }
 
 .divider2{
@@ -141,6 +153,40 @@ th, td {
     padding: 16px;
 }
 
+th {
+    font-size: 1rem;
+}
+td {
+    font-size: 1.5vw;
+}
+tr > td:nth-child(1) {
+    width: 100%;
+}
+
 tr:nth-child(even) {
     background-color: #f2f2f2
   }
+
+@media (max-width: 500px) {
+    
+    .divider1 .profile-pic img {
+        max-width: 8vw;
+        max-height: 5vh;
+    }
+    
+    .user-name-right{
+        margin-left: 0;
+        margin-top: 10px;
+        width: 70px;
+    }
+    
+    .user-name-right h4, .user-name-right p{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .name-intro p {
+        font-size: 2vw;
+    }
+}
