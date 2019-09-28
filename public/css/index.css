@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+.mobile{
+    display: none;
+}
+
+header {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
+    padding: 10px 3em;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+header .logo img {
+    width: 120px;
+}
+
+.link {
+    color: #60A7F4;
+    float: right;
+    margin-top: -35px;
+}
+
+.link a {
+    color: #60A7F4;
+}
+
+.container {
+    max-width: 100%;
+    max-height: 80vh;
+    display: flex;
+}
+
+.container .left{
+    width: 100%;
+    margin-top: 0px;
+    max-width: 60%;
+}
+
+.container .left .tweet {
+    width: 500px;
+}
+
+.container .left .tweet p {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 6vw;
+    margin-top: 2em;
+    line-height: 85px;
+    color: #109CF1;   
+}
+
+.container .left .bot h3 {
+    font-size: 25px;
+    color: #109CF1;
+    margin-top: 1.5em;
+}
+
+.container .bot p {
+    font-size: 18px;
+    color: #109CF1;
+}
+
+.container button {
+    width: 30vw;
+    height: 49.89px;
+    background-color: #109CF1;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.container .bot-img {
+    margin-left: 50px;
+    position: relative;
+    left: -250px;
+    top: 10px;
+}
+
+.container .bot-img img {
+    width: 60vw;
+    position: relative;
+    right: -10vw;
+    top: 2em;
+    z-index: -1;
+}
+
+@media (min-width: 1600px) {
+    .container .left {
+        margin-top: 2vh;
+    }
+    .container .left .tweet p {
+        font-size: 4vw;
+        margin-top: 2em;
+        line-height: 1em;  
+    }
+}
+
+@media (max-width: 800px) {
+    .container .left{
+        margin-left: -.5em;
+    }
+
+    .container .left .tweet p {
+        font-size: 4vw;
+        margin-top: 2em;
+        line-height: 40px;  
+    }
+    
+    .container .left .bot h3 {
+        font-size: 20px;
+        margin-top: 1.5em;
+    }
+    
+    .container .bot p {
+        font-size: 15px;
+        color: #109CF1;
+    }
+    
+    .container button {
+        width: 25vw;
+        height: 50px;
+    }
+    
+    .container .bot-img img {
+        width: 50vw;
+        right: -30vw;
+    }
+}
+
+@media (max-width: 600px) {
+    body header, body .container {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+
+    body {
+        width: 90vw;
+        height: 100%;
+        margin: auto auto;
+    }
+
+    .mobile-img {
+        width: 70vw;
+        height: 20vh;
+        display: block;
+        margin-top: 20%; 
+    }
+
+    .mobile-img img {
+        width: 100vw;
+    }
+
+    .mobile-logo {
+        display: block;
+        width: 200px;
+        height: 50px;
+        margin: 200px auto;
+    }
+
+    .text-mobile {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .text-mobile p{
+        font-size: 28px;
+        text-align: center;
+        color: #109CF1;
+        margin-top: -160px;
+        line-height: 30px;
+    }
+
+    .mobile-btn {
+        display: block;
+        width: 50vw;
+        height: 50px;
+        background-color: #109CF1;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 20px;
+        margin: 2em auto;
+        font-weight: bold;
+    }
+
+    .mobile-btn:hover {
+        box-shadow: 0 8px 10px -2px #60A7F4;
+    }
+    
+}
