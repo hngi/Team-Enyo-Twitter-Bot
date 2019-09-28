@@ -6,49 +6,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/css/desktop.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-            <div class="logo"><a class="navbar-brand"><img src=https://res.cloudinary.com/drelcj/image/upload/v1569333922/Group_4_wzszaa_xxkida.png> </a> </div>
-               <div class="link">
-                    <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
-                    <span>Sign in with </span> <a href="http://twitter.com" target="_blank">Twitter</a></div>
-                                       
-           
-         </header>
+        <!--LOGO-->
+        <div class="logo">
+            <a class="navbar-brand">
+                <img src="https://res.cloudinary.com/drelcj/image/upload/v1569333922/Group_4_wzszaa_xxkida.png">
+            </a>
+        </div>
+        <div class="link">
+            <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
+            <a href="http://twitter.com" target="_blank">Sign in with Twitter</a>
+        </div>
+    </header>
    
-        <div class="container">
-        <div class="tweet">
-            <p>Tweets on<br> Cloud</p>
-            
-        </div>
-        <div class="bot">
-            <h3><b>Welcome to enyobot.</b></h3>
-            <p>All your favourite tweets in one place for <br /> that non stop hashtag excitement</p>
-        </div>
+    <div class="container">
+        <div class="left">
+            <div class="tweet">
+                <p>Tweets on<br>Cloud</p>
+            </div>
+            <div class="bot">
+                <h3><b>Welcome to enyobot.</b></h3>
+                <p>All your favourite tweets in one place, for <br /> that non stop hashtag excitement.</p>
+            </div>
 
-        <form class="start">
-        <button type="submit" formaction="/signup" target="_blank">Get Started</button>
-        </form>
-                
-
+            <form class="start">
+            <button type="submit" formaction="signup.html" target="_blank">Get Started</button>
+            </form>
+        </div>
         <div class="bot-img">
-            <img src="https://res.cloudinary.com/mide358/image/upload/c_scale,w_754/v1569581792/bot-background_bmhqyu.png">
+            <img src="https://res.cloudinary.com/walebant/image/upload/v1569499836/samples/enyo-bot/bot.svg">
         </div>
     </div>
 
     <!-- moblie and  tablet responsiveness image and texts-->
-    <div class="mobile-img">
-        <img src="https://res.cloudinary.com/mide358/image/upload/c_scale,w_183/v1569583960/4fb25c016884dbbd1352e75916fa5f81_1_ptcl0f.png">
+    <div class="mobile">
+        <div class="mobile-img">
+            <img src="https://res.cloudinary.com/walebant/image/upload/v1569499836/samples/enyo-bot/bot.svg">
+        </div>
+        <img class="mobile-logo" src="https://res.cloudinary.com/walebant/image/upload/v1569497163/samples/enyo-bot/bot-logo.svg" alt="logo">
+        <div class="text-mobile">
+            <p>All your tweets saved <br>on cloud.</p>
+            <button class="mobile-btn" type="submit" formaction="signup.html" target="_blank">Get Started</button>
+        </div>
     </div>
-
-    <div class="text-mobile">
-                <p>All your tweets saved <br>on cloud </p>
-    </div>
-
 </body>
 
 </html>
