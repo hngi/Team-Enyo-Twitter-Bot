@@ -39,7 +39,7 @@
 
 </html>
 <script>
-document.querySelector('#btn').onclick = (e) => {
+document.querySelector('form').onsubmit = (e) => {
     e.preventDefault()
     data = new FormData()
     data.append('email', document.querySelector('#email').value)
