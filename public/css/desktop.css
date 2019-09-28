@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+header {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+    left:0px;
+    top: 0px;
+    padding-left: 5%;
+}
+.container {
+    
+    margin-top:20%;
+    
+   
+    
+
+}
+.logo{
+    float:left;
+
+}
+.link {
+    
+    float: right;
+    padding-right: 35px;
+    padding-top: 5px;
+    color: #60A7F4;
+}
+
+.link a {
+    color: #60A7F4;
+}
+.tweet{
+position: absolute;
+left: 98px;
+top: 249px;
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 65px;
+line-height: 96px;
+color: #109CF1;
+}
+
+.bot-img{
+position: absolute;
+width: 867.25px;
+height: 651px;
+left: 587px;
+top: 167px;
+}
+
+
+
+.bot{
+    position: absolute;
+    width: 545px;
+    height: 121px;
+    left: 98px;
+    top: 485px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;  
+    color: #109CF1;
+   }
+
+button{
+    position: absolute;
+    top:650px;
+    background-color: #109CF1;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    width: 240px;
+    height: 50px;
+    left: 100px;
+}
+
+
+/* To hide mobile image*/
+.text-mobile{
+    display: none;
+}
+
+/* responsiveness on tab and mobile*/
+@media (min-width: 320px) and (max-width:480px) {
+    .bot-img  {
+        display: none;
+}
+
+    header {
+        
+       box-shadow: none;
+    }
+.link {
+    display: none;
+}
+
+.bot {
+    display: none;
+}
+
+.tweet {
+    display: none;
+}
+.mobile-img{
+    max-width:75vw;
+    display:block;
+    position: absolute;
+    top: 110px;
+    left: 25%;
+}
+
+.logo {
+    position: absolute;
+    top: 340px;
+    left: 100px;
+}
+.text-mobile{
+    position: absolute;
+    display: inline-block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #109CF1;
+    left: 95px;
+    top: 410px;
+}
+
+button{
+    position: absolute;
+    width: 162px;
+    height: 34px;
+    left: 95px;
+    top: 480px;
+
+}
+
+}
+
+@media (min-width:1000px){
+.mobile-img{
+    display: none;
+}
+
+
+}
+@media (min-width: 481px) and (max-width:767px)
+{
+    .mobile-img{
+        position: absolute;
+        top: 70px;
+        left: 41px;
+        
+            }
+
+.text-mobile{
+    position: absolute;
+    margin-top: 450px;
+}
+
+    .bot-img {
+        display:none;
+    }
+
+    .tweet {
+        margin-top: 10%;
+    }
+}
+    @media (min-width: 768px) and (max-width: 1440px)
+    {
+      .mobile-img{
+        display: none;
+    }
+    
+
+
+    }

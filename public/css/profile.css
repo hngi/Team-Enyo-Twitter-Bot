@@ -153,6 +153,7 @@ td {
     font-size: 1.5vw;
 }
 tr > td:nth-child(1) {
+    /*width: 100%;*/
 }
 
 tr:nth-child(even) {
