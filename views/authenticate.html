@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link type="text/css" rel="stylesheet" href="../public/css/authenticate.css">
+        <link type="text/css" rel="stylesheet" href="/css/authenticate.css">
          <title>Authentication page</title>
     </head>
     <body>
@@ -20,7 +20,7 @@
                 <h1> Set Up Twitter</h1>
 
                 <!--email with set input format -->
-                <input type="text" id="twitter-handle" name="twt" placeholder="Twitter handle" required> 
+<!--                 <input type="text" id="twitter-handle" name="twt" placeholder="Twitter handle" required> 
                         
                 <input type="text"  id="display" name="display name" placeholder="Display name" required >
         
@@ -29,9 +29,10 @@
     
                 <input type="password" id="password" name="psw" placeholder="Password" 
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required >
-
+                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required > -->
+                <a  style="text-decoration: none;" href="/auth/twitter">
                 <button type="button" class="authenticate" type="submit"><img src="https://res.cloudinary.com/walebant/image/upload/v1569497292/samples/enyo-bot/twitter-icon.svg">AUTHENTICATE</button>
+                </a>
             </form>        
         </div>
     </body>
