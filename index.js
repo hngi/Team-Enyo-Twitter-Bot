@@ -35,8 +35,7 @@ app.use(flash());
 
 passport.use(new TwitterStrategy({
         consumerKey: 'SJSNgzKaMflk19NryzNuUs9gF',
-        consumerSecret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-        callbackURL: "http://localhost:8081/auth/twitter/callback"
+        consumerSecret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3'
     },
     function(token, tokenSecret, profile, cb) {
         auth.new_twitter_account(profile.id, profile.username, profile.displayName, 10).then((response) => {
@@ -88,17 +87,9 @@ app.post('/signup', function(req, res) {
     })
 })
 
-
-// app.use(function(req, res, next) {
-//     if (!req.session.user) {
-//         res.redirect('/signin')
-//     }
-//     next()
-// })
-
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
+app.get('/auth/callback', passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
     res.redirect('/profile');
 });
 
