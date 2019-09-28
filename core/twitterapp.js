@@ -7,12 +7,3 @@ var TBot = new Twitter({
     access_token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk'
 });
 
-TBot.get('users/show', {
-  screen_name : 'claretnnamocha'
-}, (err, data, response) => {
-    if (err) {
-        console.log(err);
-        return
-    }
-    console.log(data)
-})

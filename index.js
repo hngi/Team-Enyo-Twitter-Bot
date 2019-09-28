@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
+var session = require('express-session')
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const formidableMiddleware = require('express-formidable');
@@ -20,54 +21,78 @@ app.set('view engine', 'html')
 
 app.use(formidableMiddleware());
 
-app.get('/', function(req, res, next) {
-    if (req.query.oauth_token) {
-        const request = require('request');
-        const options = {
-            headers: {
-                'Token': req.query.oauth_token,
-                'oauth_verifier': req.query.oauth_verifier
-            },
-            oauth: {
-                consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-                consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-                token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-                token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-            },
-            method: 'post',
-            url: 'https://api.twitter.com/oauth/access_token',
-            form: {
-                // 'oauth_token': req.query.oauth_token,
-                'oauth_verifier': req.query.oauth_verifier,
-            }
-        };
+var passport = require('passport')
+var TwitterStrategy = require('passport-twitter').Strategy;
 
-        request(options, function(error, response, data) {
-            console.log(data)
-            // res.end(JSON.stringify(error))
-            res.end(JSON.stringify(data))
-            // res.render('authenticate', { layout: false, link: data.split('&')[0] })
+
+var flash = require('express-flash')
+
+app.use(session({ secret: 'SECRET' }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
+passport.use(new TwitterStrategy({
+        consumerKey: 'SJSNgzKaMflk19NryzNuUs9gF',
+        consumerSecret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
+        passReqToCallback: true
+    },
+    function(req, token, tokenSecret, profile, cb) {
+        auth.new_twitter_account(profile.id, profile.username, profile.displayName, req.session.user.id).then((response) => {
+            console.log(response)
+            return cb();
         })
-    } else {
-        res.render('index', { layout: false })
     }
+));
+
+function auth1(req, res, next) {
+    if (req.session.user) {
+        return next();
+    }
+    res.redirect('/signin');
+}
+
+function auth2(req, res, next) {
+    if (!req.session.user) {
+        return next();
+    }
+    res.redirect('/profile');
+}
+
+app.use(express.static('public/'));
+
+app.get('/signout', function(req, res, next) {
+    req.session.destroy(function(err) {
+        res.redirect('/signin');
+    })
 })
 
-app.get('/signup', function(req, res) {
+app.get('/', function(req, res, next) {
+    res.render('index', { layout: false })
+})
+
+app.get('/signin', auth2, function(req, res) {
+    res.render('signin', { layout: false })
+})
+
+app.get('/signup', auth2, function(req, res) {
     res.render('signup', { layout: false })
 })
 
-app.post('/signin', function(req, res) {
+
+app.post('/signin', auth2, function(req, res) {
     var check = auth.check_params(req.fields, ['email', 'password'])
     if (!check.status) { res.end(JSON.stringify(check)) }
     var data = check.data
     var client = auth.connect_db()
     auth.signin(client, data.email, data.password).then(response => {
+        req.session.user = response.data
         res.end(JSON.stringify(response))
     })
 })
 
-app.post('/signup', function(req, res) {
+app.post('/signup', auth2, function(req, res) {
     var check = auth.check_params(req.fields, ['firstname', 'lastname', 'email', 'password'])
     if (!check.status) { res.end(JSON.stringify(check)) }
     var data = check.data
@@ -77,34 +102,20 @@ app.post('/signup', function(req, res) {
     })
 })
 
-app.get('/profile', function(req, res) {
+app.get('/auth/twitter', auth1, passport.authenticate('twitter'));
+
+app.get('/auth/callback', auth1, passport.authenticate('twitter', { failureRedirect: '/profile' }), function(req, res) {
+    res.redirect('/profile');
+});
+
+
+app.get('/profile', auth1, function(req, res) {
     res.render('profile', { layout: false })
 })
 
-app.get('/authenticate', function(req, res) {
-    const request = require('request');
-    const options = {
-        oauth: {
-            consumer_key: 'SJSNgzKaMflk19NryzNuUs9gF',
-            consumer_secret: 'lK8AUYagdeuOXx8Z8VsV7iJOY4BdaAde8pbfojiEdnT2nSXnQ3',
-            token: '1135870293690507264-x6HRGbiyC7vYjDYaj7aI2rkpqTdcQd',
-            token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk',
-        },
-        method: 'post',
-        url: 'https://api.twitter.com/oauth/request_token',
-        form: {
-            'oauth_callback': 'https://enyo-twitter-bot.herokuapp.com/',
-        }
-    };
-
-    request(options, function(error, response, data) {
-        console.log(data)
-        res.render('authenticate', { layout: false, link: data.split('&')[0] })
-    })
-
+app.get('/authenticate', auth1, function(req, res) {
+    res.render('authenticate', { layout: false })
 })
-
-app.use(express.static('public/'));
 
 app.listen(port, function() {
     console.log(`Server listening on http://localhost:${port}`)

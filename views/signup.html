@@ -10,77 +10,80 @@
 </head>
 
 <body>
-        <header>
-                <!-- twitter-bot-logo -->
-                <div class="row">
-                        <div class="col">
-                            <div class="logoDiv">
-                                <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318093/team-enyo-twitter-bot-project/Group_4_c0mkdp.png" 
-                                    alt="logo" 
-                                />
-                            </div>
-                        </div>
+    <header>
+        <!-- twitter-bot-logo -->
+        <div class="row">
+            <div class="col">
+                <div class="logoDiv">
+                    <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318093/team-enyo-twitter-bot-project/Group_4_c0mkdp.png" alt="logo" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <!-- row for contents in the page -->
+        <div class="row" id="main-content-div">
+            <div class="col-md-6">
+                <div class="imgDiv" id="first-col">
+                    <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Frame_rar5yv.png" alt="app-img" />
+                </div>
+            </div>
+            <!-- signup form -->
+            <form method="post" action="form.php" name="myForm" id="myForm">
+                <div class="signup-form">
+                    <div class="signupText">
+                        <h4>Sign Up</h4>
                     </div>
-                    </header>
-                
-                    <div class="container-fluid">
-                        
-                
-                        <!-- row for contents in the page -->
-                        <div class="row" id="main-content-div">
-                            <div class="col-md-6">
-                                <div class="imgDiv" id="first-col">
-                                    <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Frame_rar5yv.png" 
-                                    alt="app-img"/>
-                                                                    
-                                </div>
-                            </div>
-                
-                            <!-- signup form -->
-                            
-                            <form method="post" action="form.php" name="myForm"  id="myForm">
-                            
-                                    <div class="signup-form">
-                                
-                                      <div class="signupText">
-                                            <h4>Sign Up</h4>
-                                        </div>
-                                        
-                                        <input type="text" placeholder="First Name" aria-describedby="name-format" id="fname" name="fname" pattern="[A-Za-z]+" required/>
-                                        <p id="fname_error" class="wrong-input"></p>
-                        
-                                        <input type="text" placeholder="Last Name" id="lname" name="lname" pattern="[A-Za-z]+" required/>
-                                        <p id="lname_error" class="wrong-input"></p>
-                        
-                                        <input type="email" placeholder="Email" id="email" name="email" 
-                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                                        <p id="email_error" class="wrong-input"></p>
-                                    
-                                        <input type="password" placeholder="Enter Password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" 
-                                        required>
-                                        <p id="password_error" class="wrong-input"></p>
-                                    
-                                        <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                        title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" 
-                                        required>
-                                        <p id="cpassword_error" class="wrong-input"></p>
-                                        
-                                        <div class="clearfix">
-                                            <button type="submit" value="submit" class="btn btn-primary">Sign Up</button>
-                                        </div>
-                
-                                        <div class="twitter-link">
-                                            <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
-                                               <span>Sign in with </span> <a href="http://twitter.com" target="_blank">twitter</a></div>
-                                       
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    <input type="text" placeholder="First Name" aria-describedby="name-format" id="fname" name="fname" pattern="[A-Za-z]+" required />
+                    <p id="fname_error" class="wrong-input"></p>
+                    <input type="text" placeholder="Last Name" id="lname" name="lname" pattern="[A-Za-z]+" required />
+                    <p id="lname_error" class="wrong-input"></p>
+                    <input type="email" placeholder="Email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <p id="email_error" class="wrong-input"></p>
+                    <input type="password" placeholder="Enter Password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required>
+                    <p id="password_error" class="wrong-input"></p>
+                    <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required>
+                    <p id="cpassword_error" class="wrong-input"></p>
+                    <div class="clearfix">
+                        <button type="submit" value="submit" class="btn btn-primary">Sign Up</button>
                     </div>
-                    <script src="/bootstrap/js/bootstrap.min.js"></script>
-                    <script src="/js/validate-signup.js"></script>
-                </body>
-                
-                </html>
+                    <div class="twitter-link">
+                        <img src="https://res.cloudinary.com/mide358/image/upload/v1569399147/ICON_TWITTER_1_bv6cah.png" alt="twitter-logo">
+                        <span>Sign in with </span> <a href="http://twitter.com" target="_blank">twitter</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/validate-signup.js"></script>
+</body>
+
+</html>
+<script>
+document.querySelector('form').onsubmit = (e) => {
+    e.preventDefault()
+    if (document.querySelector('#password').value != document.querySelector('#cpassword').value) {
+        alert('Passwords do not match!')
+    } else {
+        data = new FormData()
+        data.append('email', document.querySelector('#email').value)
+        data.append('firstname', document.querySelector('#fname').value)
+        data.append('lastname', document.querySelector('#lname').value)
+        data.append('password', document.querySelector('#password').value)
+        fetch('/signup', {
+            method: 'post',
+            body: data
+        }).then((res) => {
+            res.json().then((data) => {
+                alert(data['message'])
+                if (data['status']) {
+                    location.assign('/signin')
+                }
+            })
+        }).catch((err) => {
+            console.log(e)
+        })
+    }
+}
+</script>
