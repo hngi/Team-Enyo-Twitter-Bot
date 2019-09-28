@@ -7,13 +7,3 @@ var TBot = new Twitter({
     access_token_secret: 'WIQ6oWUIEKDNGtmdp5GmWWC80XodKmFkr9GnAxwmiWffk'
 });
 
-TBot.post('oauth/access_token', {
-  oauth_verifier : 'DB3KC5huVq0fd7X44nw7aNw2ksxcfdRL'
-}, (err, data, response) => {
-    if (err) {
-        console.log(err);
-        return
-    }
-    console.log(data)
-})
-

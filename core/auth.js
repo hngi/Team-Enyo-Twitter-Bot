@@ -28,7 +28,7 @@ async function query(client, sql, params) {
 
         return await client.query(q)
     } catch (e) {
-        console.log('Error 2')
+        console.log(e)
     }
 
 }
@@ -96,7 +96,18 @@ function check_params(request, params) {
     }
 }
 
-module.exports = { connect_db, signin, signup, check_params }
+async function new_twitter_account(id,display_name,full_name,user_id) {
+    client = connect_db()
+    sql = 'INSERT INTO twitter_accounts (id,displayname,fullname,user_id) VALUES ($1,$2,$3,$4)'
+    params = [ id,display_name,full_name,user_id ]
+    await query(client, sql, params)
+    return {
+        status: true,
+        message: 'Data stored!'
+    }
+}
+
+module.exports = { connect_db, signin, signup, check_params, new_twitter_account }
 
 // client = connect_db();
 // // signup(client,'Claret','Nnamocha','devclareo@gmail.com','Alpha').then(response => {
