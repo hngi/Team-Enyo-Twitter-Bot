@@ -10,6 +10,7 @@ const app = express()
 const port = process.env.PORT || 8081
 
 const auth = require('./core/auth')
+const { TBot } = require('./core/twitterapp')
 
 
 app.engine('html', handlebars({
@@ -110,13 +111,45 @@ app.get('/auth/callback', auth1, passport.authenticate('twitter', { failureRedir
 
 
 app.get('/profile', auth1, function(req, res) {
-    res.render('profile', { layout: false })
+    res.render('profile', { layout: false, user_id:req.session.user.id })
 })
 
 app.get('/authenticate', auth1, function(req, res) {
     res.render('authenticate', { layout: false })
 })
 
+app.post('/fetch-tweets', function (req,res) {
+    var check = auth.check_params(req.fields, ['user_id'])
+    if (!check.status) { res.end(JSON.stringify(check)) }
+    var data = check.data
+    auth.get_tweets(data.user_id).then((response) => {
+        res.end(JSON.stringify(response))
+    })
+})
+
+app.post('/update-tweets', auth1, function (req,res) {
+    var check = auth.check_params(req.fields, ['user_id'])
+    if (!check.status) { res.end(JSON.stringify(check)) }
+    var c_data = check.data
+    TBot.get('statuses/user_timeline', { user_id : c_data.user_id },(err, data, response) => {
+        auth.update_tweets(data, c_data.user_id).then((response) => {
+            res.end(JSON.stringify(response))
+        })
+    })
+})
+
+app.post('/get-twitter-accounts', auth1, function (req,res) {
+    var check = auth.check_params(req.fields, ['user_id'])
+    if (!check.status) { res.end(JSON.stringify(check)) }
+    var c_data = check.data
+    // console.log(c_data)
+    auth.get_twitter_accounts(c_data.user_id).then(response=>{
+        res.end(JSON.stringify(response))
+    })
+})
+
+
 app.listen(port, function() {
     console.log(`Server listening on http://localhost:${port}`)
 })
+
