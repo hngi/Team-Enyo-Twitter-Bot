@@ -44,40 +44,53 @@ passport.use(new TwitterStrategy({
     }
 ));
 
+function auth1(req, res, next) {
+    if (req.session.user) {
+        return next();
+    }
+    res.redirect('/signin');
+}
+
+function auth2(req, res, next) {
+    if (!req.session.user) {
+        return next();
+    }
+    res.redirect('/profile');
+}
+
 app.use(express.static('public/'));
+
+app.get('/signout', function(req, res, next) {
+	req.session.destroy(function(err) {
+    	res.redirect('/signin');		
+	})
+})
 
 app.get('/', function(req, res, next) {
     res.render('index', { layout: false })
 })
 
-// app.use(function(req, res, next) {
-//     if (req.session.user) {
-//         res.redirect('/profile')
-//     }
-//     next()
-// })
-
-app.get('/signin', function(req, res) {
+app.get('/signin', auth2, function(req, res) {
     res.render('signin', { layout: false })
 })
 
-app.get('/signup', function(req, res) {
+app.get('/signup', auth2, function(req, res) {
     res.render('signup', { layout: false })
 })
 
 
-
-app.post('/signin', function(req, res) {
+app.post('/signin', auth2, function(req, res) {
     var check = auth.check_params(req.fields, ['email', 'password'])
     if (!check.status) { res.end(JSON.stringify(check)) }
     var data = check.data
     var client = auth.connect_db()
     auth.signin(client, data.email, data.password).then(response => {
+    	req.session.user = response.data
         res.end(JSON.stringify(response))
     })
 })
 
-app.post('/signup', function(req, res) {
+app.post('/signup', auth2, function(req, res) {
     var check = auth.check_params(req.fields, ['firstname', 'lastname', 'email', 'password'])
     if (!check.status) { res.end(JSON.stringify(check)) }
     var data = check.data
@@ -87,18 +100,18 @@ app.post('/signup', function(req, res) {
     })
 })
 
-app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter', auth1, passport.authenticate('twitter'));
 
-app.get('/auth/callback', passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
+app.get('/auth/callback', auth1, passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
     res.redirect('/profile');
 });
 
 
-app.get('/profile', function(req, res) {
+app.get('/profile', auth1, function(req, res) {
     res.render('profile', { layout: false })
 })
 
-app.get('/authenticate', function(req, res) {
+app.get('/authenticate', auth1, function(req, res) {
     res.render('authenticate', { layout: false })
 })
 
