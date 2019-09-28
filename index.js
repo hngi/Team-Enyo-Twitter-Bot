@@ -89,7 +89,7 @@ app.post('/signup', function(req, res) {
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
-app.get('/', passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
+app.get('/auth/callback', passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
     res.redirect('/profile');
 });
 
