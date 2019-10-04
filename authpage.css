@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Lato';
+}
+
+header {
+    margin: 20px auto;
+    width: 50px;
+}
+
+header img {
+    margin-left: -45px;
+    width: 120px;
+}
+
+
+/*section styling*/
+
+.container {
+    margin: auto auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 70vw;
+    max-height: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0px 20px #0f0f0f;
+}
+
+.container h1 {
+    font-size: 20px;
+    color:#109CF1 ;
+    text-align: center;
+    padding-top: 32px;
+    font-weight: bold;
+}
+
+.container form {
+    margin-top: 32px;
+}
+
+.container form input {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 2px;
+    font-size: 15px;
+    padding-left: auto;
+    padding-right: auto;
+}
+.button{
+    display: block;
+    background: #109CF1;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 9px;
+    width: 100%;
+    border-radius: 10px;
+}
+.button:hover{
+    color: cyan;
+    text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 50vw;
+    }
+    .container .row form input {
+        width: 43vw;
+        margin-left: -11vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        max-width: 40vw;
+    }
+    .container .row form input {
+        width: 35vw;
+        margin-left: -9vw;
+    }
+}
