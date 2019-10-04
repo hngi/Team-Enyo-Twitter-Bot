@@ -30,8 +30,6 @@ async function exec_query(client, sql, params) {
     } catch (e) {
         console.log(e)
         return false
-    }finally{
-        client.end();
     }
 
 }
