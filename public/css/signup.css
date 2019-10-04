@@ -1,229 +1,200 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-body {
-    Background: #CDDBFF;
-    font-family: Lato;
+#main-content-div { 
+    background: #CDDBFF; opacity: 0.7; height: 97vh;
 }
 
-header{
-    position: absolute;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width:100%;
-    left:0px;
-    top: 0px;
-    
-}
-.imgDiv  {
-    margin-top: 13%;
-    width: 20%;
-    display: block;
-    float: left;
-    margin-left: 5%;
-}
+#main-content-div div { margin: auto; }
 
-.logoDiv {
-   padding-left: 5%;
-   padding-top: 2px;
+.imgDiv img { margin-left: 35%; margin-right: 5%; width: 60%; }
+
+.logoDiv { margin: 7px 0; padding-left: 2%; }
+
+.logoDiv img { width: 100px; }
+
+.flip-img img {
+    margin-right: 35%;  margin-left: 5%; width: 60%; -webkit-transform: scale(1); transform: rotateY(180deg);
 }
 
 * {box-sizing: border-box}
 
-.signup-form {
-    display: block;
-    float: right;
-    height: 480px;
-    width: 459px;
-    margin: auto auto;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 55px;
-    margin-top: 11%;
+#myForm {
+    width: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 10%;
     margin-right: 10%;
-   
-  
-}
-
-.signupText {
-    margin-top: 35px;
-    color: grey;
-    font-size: 22px;
-    padding-bottom: 15px;
     text-align: center;
+    background: #FFFFFF;
+    color: rgba(3, 8, 64, 0.56);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
 }
-
-
 
 /* Full-width input fields */
-  input {
+    input[type=text], input[type=password], input[type=email] {
     width: 80%;
+    margin: 2% 10%;
     display: inline-block;
-    background: rgba(254, 254, 251, 0.05);
-    color: rgba(3, 8, 64, 0.56);
-    border: 1px solid rgba(3, 8, 64, 0.3);
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-left: 50px;
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0; 
 }
 
+input[type=text]:focus, input[type=password]:focus,input[type=email]:focus {
+    outline: none;
+  }
+
 input[placeholder] {
-    font-family: Lato;
-    font-size: 12px;
-    color: rgba(21, 54, 153, 0.5);
-    line-height: 14px;
-    padding: 10px;
+    font-size: 13px;
+    color: darkslategray;
+    padding: 5px;
+}
+
+input {
+    background: white;
+    max-height: 70px;
+    border-radius: 10px;
+    line-height: 17px;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    width: 80%;
+    margin-bottom: 25px;
 }
 
 /* Set a style for all buttons */
 .btn {
     background-color: #109CF1;
     color: white;
-    margin: 0 25%;
+    margin: 0 30%;
     cursor: pointer;
-    width: 50%;
-    opacity: 0.9;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding:5px;
-    font-family: Lato;
-    font-size: 18px;
-    line-height:22px;
-}
-.twitter-link{
-    font-family: Lato;
-    font-size: 18px;
-    line-height:22px;
-    color: rgba(3, 8, 64, 0.56);
-    text-align: center;
-}
-
-
-button:hover {
-    opacity:1;
+    width: 40%;
 }
 
 .wrong-input {
-    color: red;
-    animation: shake 0.5s;
-    animation-iteration-count: 2;
+    color: red; animation: shake 0.5s; animation-iteration-count: 2;
 } 
 
-
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  border-radius: 30px;
-  background-color: #f44336;
-}
-
 /* Add padding to container elements */
-.container {
-    padding: 16px;
-}
+.container { padding: 25px; }
+
 .container p { font-size: 13px; }
 
+.container h5 { color: grey; font-size: 20px; }
 
 /* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.clearfix::after { 
+    content: ""; clear: both; display: table;
 }
 
 .clearfix {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+.clearfix div {
+    padding-bottom: -10px;
+}
+
+.clearfix button {
+    width: 120px;
+    margin: 0 auto;
+    border-radius: 20px 2px;
 }
 
 .clearfix h5 {
-    font-size: 13px;
-    line-height: 22px;
+    font-size: 13px; line-height: 27px; font-weight: 400;
 }
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .signupbtn { width: 100%;}
-}
+/* for tablets and Ipad view */
+@media screen and (max-width: 768px) {
+    #myForm { width: 100%; margin: 0; border-radius: 30px; }
 
-/* Media responsiveness for mobile */
-
-@media (min-width: 320px) and (max-width:480px) {
-    .imgDiv  {
-        display: none;
-}
-
-.signup-form {
-    margin-top: 25%;
-    max-width: 75vw;
-    max-height: 70vh;
-}
- input {
-   
-    max-width: 70%;
-    display: inline-block;
-}
-
-.signupText{
-    font-size: 18px;
-    padding-bottom: 5px;
-    text-align: center;
-
-}
     input[placeholder] {
-        line-height: 10px;
-        padding: 5px;
-
+        font-size: 17px;
+        color: darkslategray;
+        padding: 9px;
+        width: 90%;
+        margin: 2% 5%;
     }
-    .btn {
-        
-        width: 40%;
-        opacity: 0.9;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        padding:5px;
-        font-family: Lato;
-        font-size: 15px;
-        line-height:15px;
-        margin-left: 33%;
-        
+    .imgDiv img { margin-left: 35%;  margin-right: 5%; width: 70%;
     }
-    .twitter-link{
-       margin-top:5px;
-    }
-}
-/* Media responsiveness for mobile and tablet*/
-@media (min-width: 481px) and (max-width: 767px) {
-
-
-    .signup-form {
-        max-width: 50vw;
+    
+    .logoDiv { margin: 7px 0; padding-left: 2%; }
+    
+    .logoDiv img { width: 110px; margin-left: 3%; }
+    
+    .flip-img img {
+        margin-right: 25%; 
+        margin-left: 5%;
+        width: 70%;
+        border: 1ps solid red;
+        -webkit-transform: scale(1);
+        transform: rotateY(180deg);
     }
 
-    .imgDiv  {
-        display: none;
+    .clearfix button {
+        font-size: 18px;
+        width: 135px;
+        margin: 0 auto;
+        border-radius: 20px 2px;
+    }
+    
+    .container h5 { color: grey; font-size: 20px; }
+
+    .clearfix h5 { 
+        font-size: 17px; line-height: 27px; font-weight: 300;
+    }
 }
 
+/* for Iphones and Android devices */
+@media screen and (max-width: 414px){
+    #main-content-div { height: 100vh; }
+
+    .imgDiv img { width: 30%; margin: 0 35% 3%; }
+
+    .flip-img img { display: none; }
+
+    input[placeholder] {
+            font-size: 13px;
+            color: darkslategray;
+            padding: 6px;
+            width: 90%;
+            margin: 2% 5%;
+    }
+    
+    input { line-height: 14px; }
+
+    #myForm { width: 82%; margin: 0 8% 20%; border-radius: 30px; } 
 
 
-}
+    .container h5 { color: grey; font-size: 16px; }
 
-@media (min-width: 768px) and (max-width: 1440px) {
+    .clearfix div {
+        padding-bottom: -5px;
+    }
+    .clearfix h5 { 
+        font-size: 13px; line-height: 20px; font-weight: 300;
+    }
+    .clearfix button {
+        width: 100px;
+        margin: 0 auto;
+    }
 
-    .signup-form {
-        width:60%;   
-        margin-right:20%;
-        margin-top: 30%;
-    }  
-   
+    @media screen and (max-width: 320px) {
+        #myForm { 
+            width: 80%; margin: 0 10%;
+            border-radius: 30px;
+        }
 
-   
+        .logoDiv img { width: 100px; margin-left: 3%; }
 
-   
-.imgDiv {
-    display: none;
-}
+        .imgDiv img { width: 20%; margin: 0 40% 3%; }
 
+        .clearfix div span { font-size: 14px; }
+
+        input[placeholder] { padding: 4px; }
+
+        input { line-height: 16px; }
+
+ 
+
+    }
 }
