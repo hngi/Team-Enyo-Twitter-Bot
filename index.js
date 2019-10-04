@@ -105,7 +105,7 @@ app.post('/signup', auth2, function(req, res) {
 
 app.get('/auth/twitter', auth1, passport.authenticate('twitter'));
 
-app.get('/auth/callback', auth1, passport.authenticate('twitter', { failureRedirect: '/profile' }), function(req, res) {
+app.get('/auth/callback', auth1, passport.authenticate('twitter', { failureRedirect: '/' }), function(req, res) {
     res.redirect('/profile');
 });
 

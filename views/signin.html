@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>sign in page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./w3.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/login.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>sign in page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./w3.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/login.css">
+    </head>
     <body>
         <div style="height: 70px; background-color:white;">
-           <a href="index.html">
+               <!-- logo -->
                <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Group_4_c0mkdp.png"
                 alt="logo" class="img1"
             />
-            </a>
         </div>
         <div class="div0">
             <div class="div1">
-                <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Frame_rar5yv.png"
+                <!-- left image -->
+                <img src="https://res.cloudinary.com/cynthiaomovoiye/image/upload/v1569318018/team-enyo-twitter-bot-project/Frame_rar5yv.png" 
                     alt="image" class="img2"
                 />
             </div>
+
+        <!-- login form -->
             <div class="div2">
                 <p class="heading">Sign In</p>
-                <form method="post" action="form.php" name="myForm" id="myForm">
+                <form method="post" action="/signin" name="myForm" id="myForm">
                     <input type="email" placeholder="Email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required >
                     <input type="password" id="password" name="password" placeholder="password"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                             title="Must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter" required>
                     <p class="check"><input type="checkbox" name="check" value="checkbox" checked="checked"> Remember me</p>
-                    <button type="submit" value="submit" id="btn" class="button">Log In</button> 
+                    <button type="submit" value="Log in" id="btn" class="button">Log In</button> 
                     
                 </form>
                 <p class="pet"> No account yet? &nbsp; &nbsp;
@@ -41,27 +43,28 @@
                 </p>
             </div>
         </div>
-    
-    <script src="signin.js"></script>
-</body>
+    <!-- <script src="/public/js/signin.js"></script> -->
+        <script>
+            (function() {
+                document.querySelector('form').onsubmit = (e) => {
+                    e.preventDefault()
+                    data = new FormData()
+                    data.append('email', document.querySelector('#email').value)
+                    data.append('password', document.querySelector('#password').value)
+                    fetch('/signin', {
+                        method: 'post',
+                        body: data
+                    }).then((res) => {
+                        res.json().then((data) => {
+                            alert(data['message'])
+                            location.reload()
+                        })
+                    }).catch((err) => {
+                        console.log(e)
+                    })
+                }
 
+            })();
+        </script>
+    </body>
 </html>
-<script>
-document.querySelector('form').onsubmit = (e) => {
-    e.preventDefault()
-    data = new FormData()
-    data.append('email', document.querySelector('#email').value)
-    data.append('password',document.querySelector('#password').value)
-    fetch('/signin', {
-        method: 'post',
-        body: data
-    }).then((res) => {
-        res.json().then((data) => {
-            alert(data['message'])
-            location.reload()
-        })
-    }).catch((err) => {
-        console.log(e)
-    })
-}
-</script>

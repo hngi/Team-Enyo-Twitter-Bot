@@ -8,20 +8,20 @@ body{
    margin-top: 2%; 
    max-width: 100px ;
 }
-.img2{
-    width:100%;
-}
+.img2{ width:100%; }
+
 .div0{
   display: flex;
   flex-direction: row;
 }
+
 .div1{
     margin-left: 10%;
     padding-top: 11.5%;
    padding-left: 4%;
    width: 30%;
 }
-.div2{
+.div2 {
    border-radius: 20px;
    background-color:white;
    padding-top: 60px;
@@ -35,7 +35,7 @@ body{
 }
 
 input[type=email] {
-width: 80%;
+   width: 80%;
    padding: 12px 12px;
    margin-left:11%;
    display: inline-block;
@@ -46,18 +46,22 @@ width: 80%;
    box-sizing: border-box;
    margin-bottom: 25px;
 }
+
 input[type=email]:focus {
    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #999999;
     border: 1px solid #999999; border-radius: 4px; box-sizing: border-box; margin-bottom: 25px;
 }
+
 input[type=password] {
    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #a6a6a6;
    border: 1px solid #cccccc; border-radius: 4px; box-sizing: border-box; margin-bottom: 3px;
 }
+
 input[type=password]:focus {
    width: 80%; padding: 12px 12px; margin-left:11%;  display: inline-block; font-size: 11px; color: #999999;
    border: 1px solid #999999; border-radius: 4px; box-sizing: border-box; margin-bottom: 3px;
 }
+
 .button {
    width: 50%; padding: 14px 20px; display: cursor: pointer;
    border: 0px;  background-color: #6691ff; margin-left: 25%;
@@ -67,6 +71,7 @@ input[type=password]:focus {
 .button:hover {
    background-color: #6691ff;
 }
+
 .heading{
    font-size: 20px; color:#cccccc; margin-left: 39.5%; margin-bottom: 28px;
 }
@@ -78,6 +83,8 @@ input[type=password]:focus {
 }
 a{ text-decoration: underline; color: #6691ff; }    
 
+
+/* for Ipads and related screen sizes */
 @media screen and (max-width: 768px){
    .img1{
       margin-left: 6%; margin-bottom: 3%; margin-top:3%; max-width: 100px ;
@@ -111,7 +118,7 @@ input[type=password] {
 }
 }
 
-
+/* Iphones annd android devices */
 @media screen and (max-width:414px){
    .img1{
       margin-left: 6%; margin-bottom: 1%; margin-top: 6%; max-width: 100px ;
@@ -141,9 +148,10 @@ input[type=password] {
 .check{
    font-size: 11.5px; margin-bottom: 22px;
 }
-.pet{margin-left: 23%;margin-top: 10px; margin-bottom: 10px; font-size: 12px;
+.pet { margin-left: 23%;margin-top: 10px; margin-bottom: 10px; font-size: 12px; }
 }
-}
+
+/* for smaller screen sizes */
 @media screen and (max-width:375){
    .img1{
       margin-left: 6%; margin-bottom: 1%; margin-top: 6%; max-width: 100px ;
@@ -173,6 +181,7 @@ input[type=password] {
 .pet{margin-left: 22%;margin-top: 10px; margin-bottom: 10px; font-size: 12px;
 }
 }
+
 @media screen and (max-width: 360px){
    .img1{
       margin-left: 6%; margin-bottom: 1%; margin-top:7%; max-width: 100px ;

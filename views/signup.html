@@ -29,7 +29,7 @@
                 </div>
             </div>
             <!-- signup form -->
-            <form method="post" action="form.php" name="myForm" id="myForm">
+            <form method="post" action="/signup" name="myForm" id="myForm">
                 <div class="signup-form">
                     <div class="signupText">
                         <h4>Sign Up</h4>
@@ -54,35 +54,39 @@
             </form>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <!-- <script src="./validate-signup.js"></script> -->
+    <script>
+        (function() {
+            document.querySelector('form').onsubmit = (e) => {
+                e.preventDefault()
+                if (document.querySelector('#password').value != document.querySelector('#cpassword').value) {
+                    alert('Passwords do not match!')
+                } else {
+                    data = new FormData()
+                    data.append('email', document.querySelector('#email').value)
+                    data.append('firstname', document.querySelector('#fname').value)
+                    data.append('lastname', document.querySelector('#lname').value)
+                    data.append('password', document.querySelector('#password').value)
+                    fetch('/signup', {
+                        method: 'post',
+                        body: data
+                    }).then((res) => {
+                        res.json().then((data) => {
+                            alert(data['message'])
+                            if (data['status']) {
+                                location.assign('/signin')
+                            }
+                        })
+                    }).catch((err) => {
+                        console.log(e)
+                    })
+                }
+            }
+
+        })();
+    </script>
 </body>
 
 </html>
-<script>
-document.querySelector('form').onsubmit = (e) => {
-    e.preventDefault()
-    if (document.querySelector('#password').value != document.querySelector('#cpassword').value) {
-        alert('Passwords do not match!')
-    } else {
-        data = new FormData()
-        data.append('email', document.querySelector('#email').value)
-        data.append('firstname', document.querySelector('#fname').value)
-        data.append('lastname', document.querySelector('#lname').value)
-        data.append('password', document.querySelector('#password').value)
-        fetch('/signup', {
-            method: 'post',
-            body: data
-        }).then((res) => {
-            res.json().then((data) => {
-                alert(data['message'])
-                if (data['status']) {
-                    location.assign('/signin')
-                }
-            })
-        }).catch((err) => {
-            console.log(e)
-        })
-    }
-}
-</script>
