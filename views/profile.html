@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/profile.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/profile.css" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -97,35 +97,35 @@
 </html>
 
 <script>
-async function load() {
-    f1  = new FormData()
-    f1.append('user_id',11)
-    response1 = await fetch('/get-twitter-accounts', {
-        method: 'post',
-        body: f1
-    })
-    data1 = await response1.json()
-    twitter_accts = data1.data
-    for(acct of twitter_accts){
-        f2 = new FormData()
-        f2.append('user_id', acct.id)
-        response2 = await fetch('/update-tweets',{
+    async function load() {
+        f1 = new FormData()
+        f1.append('user_id', 11)
+        response1 = await fetch('/get-twitter-accounts', {
             method: 'post',
-            body: f2
+            body: f1
         })
-        data2 = await response2.json()
+        data1 = await response1.json()
+        twitter_accts = data1.data
+        for (acct of twitter_accts) {
+            f2 = new FormData()
+            f2.append('user_id', acct.id)
+            response2 = await fetch('/update-tweets', {
+                method: 'post',
+                body: f2
+            })
+            data2 = await response2.json()
+        }
+        for (acct of twitter_accts) {
+            f3 = new FormData()
+            f3.append('user_id', acct.id)
+            response3 = await fetch('/fetch-tweets', {
+                method: 'post',
+                body: f3
+            })
+            data3 = await response3.json()
+            alert(data3)
+            console.log(data3)
+        }
     }
-    for(acct of twitter_accts){
-        f3 = new FormData()
-        f3.append('user_id', acct.id)
-        response3 = await fetch('/fetch-tweets',{
-            method: 'post',
-            body: f3
-        })
-        data3 = await response3.json()
-        alert(data3)
-        console.log(data3)
-    }
-}
-load()
+    load()
 </script>

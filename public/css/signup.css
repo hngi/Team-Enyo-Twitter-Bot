@@ -11,7 +11,7 @@
 .logoDiv img { width: 100px; }
 
 .flip-img img {
-    margin-right: 35%;  margin-left: 5%; -webkit-transform: scale(1); transform: rotateY(180deg);
+    margin-right: 35%;  margin-left: 5%; width: 60%; -webkit-transform: scale(1); transform: rotateY(180deg);
 }
 
 * {box-sizing: border-box}
