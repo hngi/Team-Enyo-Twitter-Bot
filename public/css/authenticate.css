@@ -1,89 +1,89 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-body{
-    background-color: #FFFFFF;
-    font-family: 'Lato', 'Courier New', Courier;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.logo{
-    background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
-    padding: 10px 5%;
-    width: 100%;
-    overflow: hidden;
+body {
+    background-color: #ffffff;
+    font-family: 'Lato';
 }
 
-.form-container {
-    margin: 2em auto;
+header {
+    margin: 20px auto;
+    width: 50px;
+}
+
+header img {
+    margin-left: -45px;
+    width: 120px;
+}
+
+
+/*section styling*/
+
+.container {
+    margin: auto auto;
+    padding-left: 24px;
+    padding-right: 24px;
     max-width: 70vw;
+    max-height: 50%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0px 20px #0f0f0f;
 }
 
-.form-container h1 {
-    color: #109CF1;
-    font-weight: 600;
-    font-size: 36px;
+.container h1 {
+    font-size: 20px;
+    color:#109CF1 ;
     text-align: center;
+    padding-top: 32px;
+    font-weight: bold;
 }
 
-
-::placeholder {
-    color: rgba(109, 136, 130, 0.65);
+.container form {
+    margin-top: 32px;
 }
 
-
-.form-container input {
-    border: 1px solid rgba(109, 136, 130, 0.42);
+.container form input {
+    margin-top: 24px;
+    margin-bottom: 24px;
     border-radius: 2px;
-    box-sizing: border-box;
-    width: 85%;
-    height: 40px;
-    display: block;
-    margin: 1.5em auto;
-    padding: 10px;
     font-size: 15px;
+    padding-left: auto;
+    padding-right: auto;
 }
-
-.form-container form button {
-    background-color: #109CF1;
-    color: #fff;
-    border-radius: 2px;
-    width: 85%;
+.button{
     display: block;
-    margin: 0 auto 1.5em auto;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
+    background: #109CF1;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 9px;
+    width: 100%;
+    border-radius: 10px;
+}
+.button:hover{
+    color: cyan;
+    text-decoration: none;
 }
 
-.form-container form button:hover {
-    box-shadow: 0 8px 6px -6px #109CF1;
-}
 
-.form-container form button img {
-    position: relative;
-    top: 2px;
-    right: 5px;
-}
-
-@media (min-width: 600px) {
-    .form-container {
-        max-width: 60vw;   
+@media (min-width: 768px) {
+    .container {
+        max-width: 50vw;
+    }
+    .container .row form input {
+        width: 43vw;
+        margin-left: -11vw;
     }
 }
 
 @media (min-width: 1000px) {
-    .form-container {
-        max-width: 40vw;   
+    .container {
+        max-width: 40vw;
     }
-}
-
-@media (max-width: 324px) {
-    .form-container h1 {
-        font-size: 1.5em;
+    .container .row form input {
+        width: 35vw;
+        margin-left: -9vw;
     }
 }
