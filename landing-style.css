@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: Roboto;
+    font-style: normal;
+}
+
+
+
+/* navigation bar and navigation menu-links */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 12px;
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.17);
+}
+
+.nav-links{
+    display: flex;
+    width: 35%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0;
+}
+
+.nav-text{
+    color: #109CF1;
+    font-size: 16px; 
+}
+
+.nav-text:hover{ 
+    text-decoration: none;
+}
+
+.signup-link:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.signup-link{    
+    color: #FFFFFF;
+    background: #109CF1;
+    border: 2px solid #109CF1;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+
+
+/* section */
+
+section{
+    background: #ffffff;
+    width: 100%;
+    min-height: 572px;    
+    padding-top: 60px;
+}
+
+.hero-text{  
+    font-family: Lato;
+    color: #109CF1;
+    font-weight: bold; 
+    font-size: 5rem;
+    line-height: 85px
+}
+
+.hero-small-text{
+font-weight: normal;
+font-size: 23px;
+line-height: 25px;
+color: #109CF1;
+}
+
+.button{
+    padding: 7px 50px;
+}
+
+.logo-mobile{
+    display: none;
+}
+
+.bot-mobile-image{
+    display: none;
+}
+
+.hero-mobile-text{
+    display: none;
+}
+
+
+/* media queries*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* nav links */
+    .nav-links{
+        width: unset;
+    }
+    
+/* section */
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    /* main section */
+      section{
+        height: 100vh;
+        background: #ffffff;
+
+    }
+    /* navigation bar links */
+    
+    .nav-links{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+    }
+    
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+      
+
+  /* nav */
+    header{
+      display: none;
+    }
+
+    nav{
+        display: none;
+      }
+
+      /* main section */
+    section{
+    height: 100vh;
+    }
+
+    .bot-mobile-image{
+        display: block;
+    }
+    .hero-text{
+        display: none;
+    }
+
+    .hero-mobile-text{
+        display: block;
+        text-align: center;
+        letter-spacing: normal;
+        color: #109CF1;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .bg-image-mobile{
+        margin: 0 auto;
+        display: block;
+    }
+
+    .logo-mobile{
+        margin: 0 auto;
+        display: block;
+        width: 200px;
+    }
+
+    .hero-small-text{
+        padding-top: 0;
+        color: #109CF1;
+        font-weight: bold;
+        font-size: 15px;
+        display: none;
+    }
+
+    .button{
+        padding: 9px 40px;
+    }
+    
+
+    .hero-button{
+        text-align: center;
+        color: #FFFFFF;;
+    }   
+
+
+    .signup-link{
+        color: #FFFFFF;
+        background:#109CF1 ;
+        border: none;
+    }
+
+    .bot-image{
+        display: none;
+    }
+  }
