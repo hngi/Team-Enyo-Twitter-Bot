@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Enyogoal Sign Up</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- bootstrap-->	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- external css for styling -->
+	<link rel="stylesheet" type="text/css" href="authpage.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-color ">
+		 	<!-- Brand/logo -->
+		  	<a class="navbar-brand toplogo" href="https://enyo-twitter-bot.herokuapp.com">
+		    	<img src="https://res.cloudinary.com/drelcj/image/upload/v1569333922/Group_4_wzszaa_xxkida.png" alt="logo">
+		  	</a>
+	  	</nav>
+  	</header>
+
+      <section>
+  		<div class="container">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					
+					<!-- signup form -->
+					<h1>Set Up Twitter</h1>
+						
+					<form method="POST" action="http://team-enyo-goaltracker.herokuapp.com/register">
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<input type="text" class="form-control" placeholder="Twitter Handle" value="" required  autofocus>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<input type="text" class="form-control" placeholder="Display Name" required >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<input  type="text" class="form-control" placeholder="Email" required>
+							</div>
+						</div>
+
+						<div class="form-group">	
+							<div class="cols-sm-10">
+								<input  type="password" class="form-control"  placeholder="Password" 
+                                required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<a href="" class="button">
+									<img src="https://res.cloudinary.com/dkn3u6mfe/image/upload/v1570192570/twittericon_xli261.png" alt="twittericon"> 
+									Authenticate  
+								</a>
+							</div>
+						</div>
+						
+					</form>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+</html>
